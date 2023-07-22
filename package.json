@@ -11,6 +11,7 @@
     "url": "https://github.com/yeskunall/deep-rainforest"
   },
   "license": "MIT",
+  "publisher": "yeskunall",
   "contributes": {
     "themes": [
       {
