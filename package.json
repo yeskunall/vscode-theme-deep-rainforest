@@ -1,11 +1,8 @@
 {
   "name": "deep-rainforest",
   "displayName": "Deep Rainforest",
-  "description": "",
   "version": "0.0.1",
-  "engines": {
-    "vscode": "^1.80.0"
-  },
+  "description": "",
   "categories": [
     "Themes"
   ],
@@ -17,5 +14,14 @@
         "path": "./themes/deep-rainforest-color-theme.json"
       }
     ]
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": false,
+    "tabWidth": 2
+  },
+  "engines": {
+    "vscode": "^1.80.0"
   }
 }
