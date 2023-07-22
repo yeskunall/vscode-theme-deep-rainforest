@@ -1,0 +1,21 @@
+{
+  "name": "deep-rainforest",
+  "displayName": "Deep Rainforest",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Deep Rainforest Theme",
+        "uiTheme": "vs-dark",
+        "path": "./themes/deep-rainforest-color-theme.json"
+      }
+    ]
+  }
+}
