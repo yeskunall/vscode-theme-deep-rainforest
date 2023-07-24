@@ -22,12 +22,14 @@ export default function buildTheme() {
     },
     tokenColors: [
       {
-        "name": "Comments",
-        "scope": "comment, punctuation.definition.comment",
-        "settings": {
-          "fontStyle": "italic",
-          "foreground": "#4e908793"
-        }
+        name: "Comments",
+        scope: "comment, punctuation.definition.comment",
+        settings: {
+          fontStyle: "italic",
+          foreground: chroma(DeepRainforest.activeForeground)
+            .darken(2.75)
+            .hex(),
+        },
       },
     ],
     colors: {
@@ -57,15 +59,22 @@ export default function buildTheme() {
       "editorHoverWidget.border": DeepRainforest.background,
       "editorLineNumber.activeForeground": DeepRainforest.activeForeground,
       "editorLineNumber.foreground": DeepRainforest.foreground,
-      "editorLink.activeForeground": DeepRainforest.activeForeground,
+      "editorLink.activeForeground": chroma(DeepRainforest.activeForeground)
+        .darken(0.3)
+        .hex(),
       "editorMarkerNavigation.background": DeepRainforest.background,
-      "editorRuler.foreground": chroma(DeepRainforest.foreground).darken(2.1).hex(),
+      "editorRuler.foreground": chroma(DeepRainforest.foreground)
+        .darken(2.1)
+        .hex(),
       "editorSuggestWidget.background": DeepRainforest.background,
       "editorSuggestWidget.border": DeepRainforest.background,
       "editorSuggestWidget.foreground": "#d4d4d4",
-      "editorSuggestWidget.highlightForeground": DeepRainforest.highlightForeground,
+      "editorSuggestWidget.highlightForeground":
+        DeepRainforest.highlightForeground,
       "editorSuggestWidget.selectedBackground": "#0c7d9d",
-      "editorWhitespace.foreground": chroma(DeepRainforest.foreground).darken(2.1).hex(),
+      "editorWhitespace.foreground": chroma(DeepRainforest.foreground)
+        .darken(2.1)
+        .hex(),
       "editorWidget.background": DeepRainforest.background,
       "editorWidget.resizeBorder": DeepRainforest.background,
       focusBorder: DeepRainforest.background,
@@ -78,10 +87,16 @@ export default function buildTheme() {
       "menu.separatorBackground": DeepRainforest.background,
       "menubar.selectionBorder": DeepRainforest.background,
       "minimap.background": DeepRainforest.background,
+      "notifications.background": DeepRainforest.background,
+      "notifications.border": DeepRainforest.background,
+      "notifications.foreground": DeepRainforest.foreground,
       "notificationCenter.border": DeepRainforest.background,
       "notificationCenterHeader.background": DeepRainforest.background,
+      "notificationCenterHeader.foreground": "#cccccc",
       "notificationToast.border": DeepRainforest.background,
-      "notifications.background": DeepRainforest.background,
+      "notificationsErrorIcon.foreground": "#f48771",
+      "notificationsInfoIcon.foreground": "#75beff",
+      "notificationsWarningIcon.foreground": "#cca700",
       "panel.background": DeepRainforest.background,
       "panel.border": DeepRainforest.background,
       "panelSection.border": DeepRainforest.background,
@@ -91,16 +106,45 @@ export default function buildTheme() {
       "peekViewResult.background": DeepRainforest.background,
       "peekViewTitle.background": DeepRainforest.background,
       "pickerGroup.border": DeepRainforest.background,
+      "scrollbar.shadow": DeepRainforest.background,
+      "scrollbarSlider.activeBackground": "#bfbfbf66",
+      "scrollbarSlider.background": "#79797966",
+      "scrollbarSlider.hoverBackground": "#646464b3",
       "sideBar.background": DeepRainforest.background,
+      "sideBar.border": DeepRainforest.background,
+      // TODO(yeskunall): figure out what this is...
+      // "sideBar.dropBackground": chroma(DeepRainforest.background).darken(1.5).hex(),
+      "sideBar.foreground": DeepRainforest.foreground,
+      "sideBarSectionHeader.background": DeepRainforest.background,
+      "sideBarSectionHeader.border": DeepRainforest.background,
+      "sideBarSectionHeader.foreground": DeepRainforest.foreground,
       "sideBarTitle.foreground": DeepRainforest.background,
       "tab.activeBackground": DeepRainforest.background,
       "tab.activeBorder": DeepRainforest.background,
       "tab.activeBorderTop": DeepRainforest.background,
       "tab.activeForeground": DeepRainforest.activeForeground,
-      "tab.activeModifiedBorder": chroma(DeepRainforest.activeForeground).darken(2.75).hex(), // Only applicable if `workbench.editor.highlightModifiedTabs` is enabled
-      "tab.inactiveModifiedBorder": chroma(DeepRainforest.activeForeground).darken(2.75).hex(), // Only applicable if `workbench.editor.highlightModifiedTabs` is enabled
-      "tab.unfocusedActiveModifiedBorder": chroma(DeepRainforest.activeForeground).darken(2.75).hex(), // Only applicable if `workbench.editor.highlightModifiedTabs` is enabled
-      "tab.unfocusedInactiveModifiedBorder": chroma(DeepRainforest.activeForeground).darken(2.75).hex(), // Only applicable if `workbench.editor.highlightModifiedTabs` is enabled
+      "tab.activeModifiedBorder": chroma(DeepRainforest.activeForeground)
+        .darken(2.75)
+        .hex(), // Only applicable if `workbench.editor.highlightModifiedTabs` is enabled
+      "tab.hoverBackground": "#000e14e1",
+      "tab.hoverBorder": "#000e14e1",
+      "tab.inactiveBackground": "#000e14e1",
+      "tab.inactiveForeground": chroma(DeepRainforest.activeForeground)
+        .darken(1.75)
+        .hex(),
+      "tab.inactiveModifiedBorder": chroma(DeepRainforest.activeForeground)
+        .darken(2.75)
+        .hex(), // Only applicable if `workbench.editor.highlightModifiedTabs` is enabled
+      "tab.unfocusedActiveModifiedBorder": chroma(
+        DeepRainforest.activeForeground,
+      )
+        .darken(2.75)
+        .hex(), // Only applicable if `workbench.editor.highlightModifiedTabs` is enabled
+      "tab.unfocusedInactiveModifiedBorder": chroma(
+        DeepRainforest.activeForeground,
+      )
+        .darken(2.75)
+        .hex(), // Only applicable if `workbench.editor.highlightModifiedTabs` is enabled
       "tab.border": DeepRainforest.background,
       "terminal.border": DeepRainforest.background,
       "titleBar.activeBackground": DeepRainforest.background,
@@ -108,9 +152,13 @@ export default function buildTheme() {
       // visible
       "titleBar.activeForeground": DeepRainforest.background,
       "titleBar.border": DeepRainforest.background,
-      // Match the `titleBar.activeForeground` so the text in the title bar is
+      "titleBar.inactiveBackground": "#000e14e1",
+      // Match the `titleBar.inactiveForeground` so the text in the title bar is
       // not visible even when the window is inactive
-      "titleBar.inactiveForeground": DeepRainforest.background,
+      "titleBar.inactiveForeground": "#000e14e1",
+      "tree.indentGuidesStroke": chroma(DeepRainforest.foreground)
+        .darken(1.75)
+        .hex(),
     },
   };
 }
