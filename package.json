@@ -12,6 +12,9 @@
   },
   "license": "MIT",
   "publisher": "yeskunall",
+  "scripts": {
+    "generate:theme": "ts-node source/index.ts"
+  },
   "contributes": {
     "themes": [
       {
@@ -26,6 +29,16 @@
     "semi": true,
     "singleQuote": false,
     "tabWidth": 2
+  },
+  "dependencies": {
+    "chroma-js": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/chroma-js": "^2.4.0",
+    "@types/node": "^20.4.4",
+    "@types/vscode": "^1.80.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
   },
   "engines": {
     "vscode": "^1.80.0"
