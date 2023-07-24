@@ -8,7 +8,7 @@ mkdir("./test-themes", { recursive: true })
   .then(() => {
     Promise.all([
       writeFile(
-        "./test-themes/deep-rainforest-color-theme.json",
+        "./themes/deep-rainforest-color-theme.json",
         JSON.stringify(theme, null, 2),
       ),
     ]);
